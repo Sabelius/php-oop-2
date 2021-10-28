@@ -7,7 +7,6 @@ class gameConsole extends product
 
     public function __construct($padNumber, $memoryCapacity, $name, $brand, $amount, $model, $price)
     {
-        $this->price = $price;
         $this->padNumber = $padNumber;
         $this->memoryCapacity = $memoryCapacity;
         parent::__construct($name, $brand, $amount, $model, $price);
@@ -25,15 +24,23 @@ class gameConsole extends product
     public function power()
     {
         if ($this->memoryCapacity >= 1000) {
-            return "More memory, more Game";
+            return "More, more Game";
         } else {
-            return "You need an Hard Disk";
+            return "You probably need an Hard Disk";
         }
+    }
+
+    public function getMemory(){
+        echo $this->memoryCapacity;
+    }
+
+    public function getPad(){
+        echo $this->padNumber;
     }
 }
 
 $consoles = [
-    $ps = new gameConsole(1, 1000 . "GB", "PS4", "PlayStation", 2, "plus", 250),
-    $ps = new gameConsole(4, 2000 . "GB", "PS5", "PlayStation", 5, "standard", 500),
-    $ps = new gameConsole(2, 500 . "GB", "X-box", "Microsoft", 0, "plus", 200),
+    new gameConsole(1, 1000 . "GB", "PS4", "PlayStation", 2, "plus", 250),
+    new gameConsole(4, 2000 . "GB", "PS5", "PlayStation", 5, "standard", 500),
+    new gameConsole(2, 500 . "GB", "X-box", "Microsoft", 0, "plus", 200),
 ];

@@ -10,7 +10,6 @@ class television extends product
 
     public function __construct($pixelResolution, $size, $audio, $name, $brand, $amount, $model, $price)
     {
-        $this->price = $price;
         $this->pixelResolution = $pixelResolution;
         $this->size = $size;
         $this->audio = $audio;
