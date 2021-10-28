@@ -1,8 +1,8 @@
 <?php
-require_once __DIR__ . "/shop-logic/product.php";
 require_once __DIR__ . "/shop-logic/television.php";
 require_once __DIR__ . "/shop-logic/console.php";
-require_once __DIR__ . "/shop-logic/clothes.php";
+require_once __DIR__ . "/shop-logic/shirt.php";
+require_once __DIR__ . "/shop-logic/jacket.php";
 ?>
 
 <!DOCTYPE html>
@@ -23,10 +23,10 @@ require_once __DIR__ . "/shop-logic/clothes.php";
             <?php foreach ($televisions as $tv) { ?>
                 <h2>NOME : <?php echo $tv->getName() ?></h2>
                 <h3>MARCA: <?php echo $tv->getBrand() ?></h3>
-                <h4>DISPONIBILITA': <?php echo $tv->amountNumber() ?></h4>
+                <h4>DISPONIBILITA': <?php echo $tv->getAmount() . " - " . $tv->amountNumber() ?></h4>
                 <h4>MODELLO: <?php echo $tv->getModel() ?></h4>
                 <h4>VIDEO: <?php echo $tv->getResolution() . " - " . $tv->visualQuality() ?></h4>
-                <h4>VIDEO: <?php echo $tv->getAudio() ?></h4>
+                <h4>AUDIO: <?php echo $tv->getAudio() ?></h4>
                 <h4>PREZZO: <?php echo $tv->getPrice() ?>€</h4>
             <?php } ?>
         </div>
@@ -36,7 +36,7 @@ require_once __DIR__ . "/shop-logic/clothes.php";
             <?php foreach ($consoles as $console) { ?>
                 <h2>NOME : <?php echo $console->getName() ?></h2>
                 <h3>MARCA: <?php echo $console->getBrand() ?></h3>
-                <h4>DISPONIBILITA': <?php echo $console->amountNumber() ?></h4>
+                <h4>DISPONIBILITA': <?php echo $console->getAmount() . " - " . $console->amountNumber() ?></h4>
                 <h4>MODELLO: <?php echo $console->getModel() ?></h4>
                 <h4>MEMORIA: <?php echo $console->getMemory() . " - " . $console->power() ?></h4>
                 <h4>NUMERO PAD: <?php echo $console->getPad() . " - " . $console->partyGame() ?></h4>
@@ -54,7 +54,9 @@ require_once __DIR__ . "/shop-logic/clothes.php";
             <?php foreach ($shirts as $shirt) { ?>
                 <h2>NOME : <?php echo $shirt->getName() ?></h2>
                 <h3>MARCA: <?php echo $shirt->getBrand() ?></h3>
-                <h4>DISPONIBILITA': <?php echo $console->amountNumber() ?></h4>
+                <h4>DISPONIBILITA': <?php echo $shirt->getAmount() . " - " . $shirt->amountNumber() ?></h4>
+                <h4>TAGLIA: <?php echo $shirt->getSize() . " - " . $shirt->chestSize() ?></h4>
+                <h4>COLORE: <?php echo $shirt->getColor() ?></h4>
                 <h4>MODELLO: <?php echo $shirt->getModel() ?></h4>
                 <h4>PREZZO: <?php echo $shirt->getPrice() ?>€</h4>
             <?php } ?>
@@ -65,7 +67,7 @@ require_once __DIR__ . "/shop-logic/clothes.php";
             <?php foreach ($jackets as $jacket) { ?>
                 <h2>NOME : <?php echo $jacket->getName() ?></h2>
                 <h3>MARCA: <?php echo $jacket->getBrand() ?></h3>
-                <h4>DISPONIBILITA': <?php echo $jacket->amountNumber() ?></h4>
+                <h4>DISPONIBILITA': <?php echo $shirt->getAmount() . " - " . $shirt->amountNumber() ?></h4>
                 <h4>TAGLIA: <?php echo $jacket->getSize() . " - " . $jacket->chestSize() ?></h4>
                 <h4>COLORE: <?php echo $jacket->getColor() ?></h4>
                 <h4>MODELLO: <?php echo $jacket->getModel() ?></h4>

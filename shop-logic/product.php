@@ -9,7 +9,7 @@ class product
     protected $model;
     protected $price;
 
-    protected function __construct($name, $brand, $amount, $model, $price)
+    public function __construct($name, $brand, $amount, $model, $price)
     {
         $this->name = $name;
         $this->brand = $brand;
